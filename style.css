@@ -1,32 +1,156 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
-    line-height: 1.6;
+/* --- Google Fonts Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+/* --- Reset & Variables --- */
+* {
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+:root {
+    --primary-color: #E88268;      /* Warna aksen sesuai meta theme-color */
+    --primary-hover: #D66F56;
+    --dark-navy: #1E293B;         /* Warna teks & header utama */
+    --text-muted: #64748B;        /* Warna teks sekunder */
+    --bg-color: #F8FAFC;          /* Warna latar belakang halaman */
+    --card-bg: #FFFFFF;           /* Warna latar container */
+    --border-color: #E2E8F0;
+    --shadow-soft: 0 10px 30px -5px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+}
+
+/* --- Base Body Styling --- */
+body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--dark-navy);
+    line-height: 1.7;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* --- Container / Card --- */
 .container {
-    max-width: 600px;
-    background: #fff;
-    margin: 0 auto;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    max-width: 680px;
+    width: 100%;
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* --- Profile Picture & Header --- */
 img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
     border-radius: 50%;
     display: block;
     margin: 0 auto 20px auto;
+    border: 4px solid var(--card-bg);
+    outline: 3px solid var(--primary-color);
+    box-shadow: 0 8px 16px rgba(232, 130, 104, 0.2);
 }
 
 h1 {
     text-align: center;
-    color: #2c3e50;
+    color: var(--dark-navy);
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    letter-spacing: -0.5px;
 }
 
+/* NIM Badge */
+p strong {
+    color: var(--primary-color);
+}
+
+.container > p {
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    background: #FFF5F2;
+    display: table;
+    margin: 0 auto 30px auto;
+    padding: 6px 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(232, 130, 104, 0.2);
+}
+
+/* --- Section Styling --- */
 section {
-    margin-top: 20px;
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px dashed var(--border-color);
+}
+
+h2 {
+    color: var(--dark-navy);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Menambahkan aksen garis di sebelah judul section */
+h2::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 18px;
+    background-color: var(--primary-color);
+    border-radius: 4px;
+}
+
+/* --- List Items --- */
+ul {
+    list-style: none;
+    display: grid;
+    gap: 10px;
+}
+
+li {
+    background-color: #F8FAFC;
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    border: 1px solid var(--border-color);
+    color: #334155;
+}
+
+li strong {
+    color: var(--dark-navy);
+    font-weight: 600;
+}
+
+/* --- Paragraphs --- */
+section p {
+    color: #475569;
+    font-size: 0.95rem;
+    background: #F8FAFC;
+    padding: 16px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    text-align: justify;
+}
+
+/* --- Responsif untuk Layar HP --- */
+@media (max-width: 480px) {
+    body {
+        padding: 16px;
+    }
+    .container {
+        padding: 24px;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
 }
